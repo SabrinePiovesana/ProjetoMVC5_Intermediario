@@ -1,0 +1,93 @@
+﻿@model Exemplo.Models.Professor
+
+@{
+    ViewBag.Title = "Detalhes do Professor";
+}
+
+<h2>Dados do Professor</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterBlog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterBlog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admissao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IDProfessor }) |
+    @Html.ActionLink("Retornar para lista", "Index")
+</p>
+
+<fieldset>
+    <legend>Alunos</legend>
+    <ul>
+        @foreach (var aluno in Model.Alunos)
+        {
+            <li>@aluno.Nome</li>
+        }
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>Tópicos</legend>
+    <ul>
+        @foreach (var topico in Model.Topicos)
+        {
+            <li>@topico.Descricao</li>
+        }
+    </ul>
+</fieldset>

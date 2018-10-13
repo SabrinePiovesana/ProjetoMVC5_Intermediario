@@ -1,0 +1,33 @@
+﻿@model Exemplo.Models.Topico
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Dados do Tópico</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IDTopico }) |
+    @Html.ActionLink("Retornar para lista", "Index")
+</p>

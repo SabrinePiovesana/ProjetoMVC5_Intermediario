@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Exemplo.Models.Professor>
+
+@{
+    ViewBag.Title = "Professores Cadastrados";
+}
+
+<h2>Professores Cadastrados</h2>
+
+<p>
+    @Html.ActionLink("Novo Professor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwitterBlog)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Materia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admissao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterBlog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Materia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admissao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDProfessor }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IDProfessor }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.IDProfessor })
+        </td>
+    </tr>
+}
+
+</table>
+
+<hr />
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>@Html.ActionLink(item.Nome,"Details", new { id= item.IDProfessor})</li>
+    }
+
+</ul>

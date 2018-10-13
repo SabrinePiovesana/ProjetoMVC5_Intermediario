@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Exemplo.Models.Topico>
+
+@{
+    ViewBag.Title = "Tópicos Cadastrados";
+}
+
+<h2>Tópicos Cadastrados</h2>
+
+<p>
+    @Html.ActionLink("Novo Tópico", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Professor.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Professor.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDTopico }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IDTopico }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.IDTopico })
+        </td>
+    </tr>
+}
+
+</table>
