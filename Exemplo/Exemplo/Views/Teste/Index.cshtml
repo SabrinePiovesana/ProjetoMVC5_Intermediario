@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Exemplo.Models.Aluno>
+@{
+    ViewBag.Title = "Lista de Alunos";
+}
+
+<h2>Alunos</h2>
+<br/>
+<p>Total de alunos: @Model.Count()</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        @*<li>@item.Nome</li>*@
+        <li>@Html.ActionLink(item.Nome,"Details",new {id = item.IDAluno })</li>
+    }
+</ul>
+

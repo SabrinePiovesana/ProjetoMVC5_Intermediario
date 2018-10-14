@@ -1,0 +1,21 @@
+﻿@model Exemplo.Models.Aluno
+
+@{
+    ViewBag.Title = "Detalhes do aluno";
+}
+
+<h2>Detalhes do aluno: @Model.Nome</h2>
+<fieldset>
+    <legend>Aluno</legend>
+    E-mail:@Html.DisplayFor(x => x.Email);
+    <br />
+    Ano:@Html.DisplayFor(x => x.Ano);
+    <br />
+    Aprovado:@Html.DisplayFor(x => x.Aprovado);
+    <br />
+    Incrição:@String.Format("{0:D}", Model.Inscricao);
+</fieldset>
+<p>
+    @Html.ActionLink("Retornar", "Index")
+</p>
+
